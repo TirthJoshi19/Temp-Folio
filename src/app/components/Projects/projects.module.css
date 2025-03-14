@@ -43,8 +43,14 @@
 .projectsingle p {
     padding: 0 3px 0 0;
     width: 100%;
+    color: #484848;
 }
 
+@media only screen and (min-width:321px) and (max-width:768px) {
+    .projectgrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 
 

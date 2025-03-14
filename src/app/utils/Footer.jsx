@@ -9,11 +9,18 @@ const Footer = () => {
     <footer>
     <div className='flex-center footerdiv flex-dir-col p-4'>
       <h2 className='pagehead'>Made with love by Tirth Joshi <span className='purplespan'>.</span></h2>
-      <Link href={'https://instagram.com/tirth._web'}>
+      <div className="socials">
+        <Link href={'https://instagram.com/tirth._web'}>
       <IconButton sx={{color: 'white'}}>
         <Instagram />
       </IconButton>
         </Link>
+        <Link href={'https://instagram.com/tirth._web'}>
+      <IconButton sx={{color: 'white'}}>
+        <LinkedIn />
+      </IconButton>
+        </Link>
+      </div>
     </div>
     </footer>
   )
