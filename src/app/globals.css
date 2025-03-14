@@ -8,13 +8,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-schibsted);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #51ee;
     --foreground: #ededed;
   }
 }
@@ -22,5 +22,102 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   font-family: var(--font-schibsted), sans-serif;
+   overflow: scroll;
+   overflow-x: hidden;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.fullvhvw {
+  width: 100vw;
+  height: 100vh;
+}
+
+.p-a-bottom {
+  position: fixed;
+  bottom: 0;
+  background-color: transparent;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  min-height: 20vh;
+}
+
+.active {
+  background-color: #51e !important;
+  color: white !important;
+}
+
+.pagehead {
+  font-weight: 800;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.min-50 {
+  min-height: 70vh;
+}
+
+.purplespan {
+  color: #51e;
+}
+.darkspan {
+  color: #1f1926;
+}
+
+.sec-btn {
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+  color: #51e !important;
+  transition: all 0.2s ease-in;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sec-btn::after {
+  content: '';
+  position: absolute;
+   bottom: 0;
+  left: 0;
+  padding: 0px 11px 0px 0;
+  
+  width: 0;
+  height: 2px;
+  background-color: #51e;
+  transition: width 0.3s ease;
+}
+
+.sec-btn:hover::after {
+ width: 100%;
+}
+
+.subtext {
+  color: #484848;
+  font-size: 16px;
+  padding: 2%;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.menusection {
+  opacity: 100;
+  transition: opacity 0.2s ease;
+}
+
+footer {
+  font-weight: 800;
+}
+
+.footerdiv {
+  flex-direction: column;
+  background-color: #1f1926;
 }

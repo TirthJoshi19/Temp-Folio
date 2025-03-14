@@ -1,0 +1,147 @@
+<style>
+body {
+    background-color: pink;
+}
+
+.cursor-dot, .cursor-outline {
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  transition: transform 0.1s ease;
+}
+
+.cursor-dot {
+  mix-blend-mode: difference;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.05s ease-out, background-color 0.2s ease, mix-blend-mode 0.2s ease;
+  z-index: 9999;
+}
+
+.cursor-outline {
+  mix-blend-mode: difference;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background-color: white;
+  transition: width 0.2s ease, height 0.2s ease, border-radius 0.2s ease, transform 0.1s ease, 
+              border-color 0.2s ease, background-color 0.2s ease, mix-blend-mode 0.2s ease;
+  z-index: 9999;
+}
+
+footer {
+    display: none
+}
+</style>
+
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<button class="special-btn">Hiii</button>
+<img src="./Adson logo.jpg" alt="" srcset="" width="100%">
+
+<script>
+let hovering = false;
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+// Set initial positions off-screen
+if (cursorDot && cursorOutline) {
+  cursorDot.style.transform = 'translate(-100px, -100px)';
+  cursorOutline.style.transform = 'translate(-100px, -100px)';
+}
+
+const padButton = (element) => {
+  const rect = element.getBoundingClientRect();
+  const width = rect.width;
+  const height = rect.height;
+  
+  cursorOutline.style.width = width + 'px';
+  cursorOutline.style.height = height + 'px';
+  cursorOutline.style.borderRadius = '7px';
+  cursorOutline.style.padding = '4px';
+
+  if(element.style.borderRadius){}
+  
+  // Center the outline on the button using transform
+  const centerX = rect.left + width / 2;
+  const centerY = rect.top + height / 2;
+  cursorOutline.style.transform = `translate(${centerX}px, ${centerY}px) translate(-50%, -50%)`;
+};
+
+const resetStyle = () => {
+  cursorOutline.style.width = '50px';
+  cursorOutline.style.height = '50px';
+  cursorOutline.style.borderRadius = '50%';
+  
+  // Reset blend mode and colors
+  cursorDot.style.mixBlendMode = 'difference';
+  cursorOutline.style.mixBlendMode = 'difference';
+  cursorDot.style.backgroundColor = 'white';
+  cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.7)';
+  cursorOutline.style.backgroundColor = 'white';
+};
+
+// Throttle for better performance
+function throttle(callback, limit) {
+  let waiting = false;
+  return function () {
+    if (!waiting) {
+      callback.apply(this, arguments);
+      waiting = true;
+      setTimeout(function () {
+        waiting = false;
+      }, limit);
+    }
+  };
+}
+
+// Button hover detection
+document.addEventListener('mouseover', function (e) {
+  if (e.target.tagName.toLowerCase() === 'img') {
+    // Disable the difference effect when hovering over images
+    cursorDot.style.mixBlendMode = 'normal';
+    cursorOutline.style.mixBlendMode = 'normal';
+    // Change colors to be visible on images
+    cursorDot.style.backgroundColor = 'black';
+    cursorOutline.style.borderColor = 'rgba(0, 0, 0, 0.7)';
+    cursorOutline.style.backgroundColor = 'transparent';
+  } else if (e.target.classList.contains('special-btn') || e.target.id === 'special-btn') {
+    hovering = true;
+    padButton(e.target);
+  }
+});
+
+document.addEventListener('mouseout', function (e) {
+  if (e.target.tagName.toLowerCase() === 'img') {
+    // Reset to difference effect when leaving images
+    resetStyle();
+  } else if (e.target.classList.contains('special-btn') || e.target.id == 'special-btn' || e.target.parentElement.id === 'special-btn') {
+    hovering = false;
+    resetStyle();
+  }
+});
+
+// Optimized mousemove handler using transform
+document.addEventListener(
+  'mousemove',
+  throttle(function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+    
+    if (cursorDot) {
+      cursorDot.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+    }
+    
+    if (cursorOutline && !hovering) {
+      cursorOutline.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+    }
+  }, 10)
+);
+</script>

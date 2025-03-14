@@ -1,0 +1,123 @@
+.me {
+    padding: auto;
+    width: 100vw;
+    min-height: 70vh;
+    background-color: #1f1926;
+    padding-bottom: 6%;
+}
+
+.profilepicsect {
+    width: 45%;
+    display: flex;
+    /* background-color: #7e639c; */
+    justify-content: center;
+    height: 50vh;
+}
+.profilelastchild {
+    background: #f7f7f7;
+    padding: 2%;
+    border-radius: 21px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profilelastchild img {
+    border-radius: 50%;
+    border: 4px solid #1f1926
+}
+
+.name {
+    font-size: 2rem;
+    color: #1f1926;
+    font-weight: 800;
+}
+
+.profile {
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+}
+
+.socialicon {
+    color: rgba(83, 17, 238, 0.833) !important;
+}
+
+.tech {
+    background-color: #f7f7f7;
+    width: 40%;
+    min-height: 50vh;
+    border-radius: 7px;
+    color: #1f1926;
+    padding: 1%;
+}
+
+.stuff {
+    background-color: #f7f7f7;
+    width: 40%;
+    height: 50vh;
+    border-radius: 7px;
+    color: #1f1926;
+    padding: 1%;
+}
+
+.iconsect {
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    width: 80%;
+}
+
+.secthead {
+    color: #1f1926;
+    font-size: 1.4rem;
+    font-weight: 600;
+    
+}
+
+@media (max-width: 468px) {
+    .profile {
+        flex-direction: column;
+    }
+
+    .profilepicsect {
+        width: 100%;
+    }
+
+    .tech {
+        width: 95%;
+        margin-top: 10px;
+        padding: 6px;
+    }
+
+    .iconsect {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .profile {
+        padding: 11px;
+    }
+
+    .iconsect {
+        padding: 4px;
+    }
+}
+
+.hobbyicon {
+    min-width: 50px;
+}
+
+.hobbyicon path {
+    color: #51e !important;
+    
+}
+
+.hobbyicon svg {
+    width: 50px;
+}

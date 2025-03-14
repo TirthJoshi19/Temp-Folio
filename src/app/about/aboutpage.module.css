@@ -1,0 +1,8 @@
+.about {
+    min-height: 85vh;
+    background-color: #f7f7f7;
+}
+
+.about p:nth-child(1) {
+    color: #51e;
+}
