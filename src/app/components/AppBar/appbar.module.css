@@ -13,3 +13,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media (max-width: 468px) {
+    .appbarbtnparent {
+    width: 90%;
+}
+}
