@@ -12,7 +12,7 @@ const Projects = () => {
   {
   title: 'Awesome Folio (Personal Website)',
   description: 'Coming Soon',
-  link: 'sivle.great-site.net',
+  link: '',
   img: '/assets/web.png',
   alt: 'projectimage',
   disabled: true
@@ -20,7 +20,7 @@ const Projects = () => {
   {
   title: 'Design Portfolio for Sivle Design Agency',
   description: 'Portfolio Project',
-  link: 'sivle.great-site.net',
+  link: 'https://www.sivle.great-site.net',
   img: '/assets/sivle-web.png',
   alt: 'projectimage',
   disabled: false
@@ -28,7 +28,7 @@ const Projects = () => {
   {
   title: 'Adson Barros Design Portfolio',
   description: 'Portfolio (Under Development)',
-  link: '',
+  link: 'http://www.adsonbarros.great-site.net/',
   img: '/assets/image.png',
   alt: 'projectimage',
   disabled: false
