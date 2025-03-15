@@ -15,7 +15,7 @@ const Footer = () => {
         <Instagram />
       </IconButton>
         </Link>
-        <Link href={'https://instagram.com/tirth._web'}>
+        <Link href={'https://www.linkedin.com/in/tirth-joshi-11a656317/'}>
       <IconButton sx={{color: 'white'}}>
         <LinkedIn />
       </IconButton>
