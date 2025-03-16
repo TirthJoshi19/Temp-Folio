@@ -44,7 +44,7 @@ const ReviewCards = ()=> {
     },
    {
       name: 'Tyler Bach',
-        text: 'Developed an awesome website for me which helps me sell my kitchenware products',
+        text: 'Developed an website for me that redirects to Tiktok shop / Amazon for selling',
         website: 'hh',
         photo: '/assets/tyler-500.png'
     },
