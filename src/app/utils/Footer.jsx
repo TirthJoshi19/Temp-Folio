@@ -19,7 +19,6 @@ const Footer = () => {
       <IconButton sx={{color: 'white'}}>
         <LinkedIn />
       </IconButton>
-      Hi
         </Link>
       </div>
     </div>
