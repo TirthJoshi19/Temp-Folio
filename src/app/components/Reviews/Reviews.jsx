@@ -8,9 +8,11 @@ const Reviews = () => {
   return (
     <div className='pb-8 min-50'>
       <h2 className='pagehead p-8'>People I have worked with<span className='darkspan'>.</span></h2>
-    <div className={styles.reviewParent}>
+    <div className="flex-center">
+      <div className={styles.reviewParent}>
         <ReviewCards />
       </div>
+    </div>
     </div>
   )
 }
@@ -33,7 +35,19 @@ const ReviewCards = ()=> {
         text: 'Tirth made a dynamic table for my site to showcase my plans, fixed issues on pages. Very happy',
         website: 'hh',
         photo: '/assets/Elike solutions.png'
-   }
+   },
+   {
+      name: 'Dharmin Thakar',
+        text: 'Developed an awesome website for me which helps me sell my kitchenware products',
+        website: 'hh',
+        photo: '/assets/dharmin.jpg'
+    },
+   {
+      name: 'Tyler Bach',
+        text: 'Developed an awesome website for me which helps me sell my kitchenware products',
+        website: 'hh',
+        photo: '/assets/tyler-500.png'
+    },
   ]
     return (
       reviewArr.map((rev, index)=> {
