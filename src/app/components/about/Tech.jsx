@@ -13,7 +13,7 @@ const Tech = () => {
     <div className={styles.tech}>
       <div className={styles.techsection}>
       
-        <h2 className={styles.secthead}>Tech I am Familiar With:</h2>
+        <h2 className={styles.secthead}>Stuff I am Familiar With:</h2>
       <div className={styles.iconsect}>
         <TechIcons />
       </div>
