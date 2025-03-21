@@ -28,7 +28,7 @@ const Projects = () => {
   {
   title: 'Adson Barros Design Portfolio',
   description: 'Portfolio (Under Development)',
-  link: 'http://www.adsonbarros.great-site.net/',
+  link: 'https://www.adsonbarros.great-site.net/',
   img: '/assets/image.png',
   alt: 'projectimage',
   disabled: false
