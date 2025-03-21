@@ -38,28 +38,29 @@ const Appbar = () => {
     <>
       <div className={`${styles.appbarparent} flex-center menusection`}>
         <div className={styles.appbarbtnparent}>
-         <Link href={'/'}>
-          <WhiteTooltip title="Home">
-            <IconButton onClick={(e)=> {
+         <Link href={'/'}
+         onClick={(e)=> {
             onclickHandler(0)
-          }} className={active === 0 && 'active'}>
+          }}>
+          <WhiteTooltip title="Home">
+            <IconButton  className={active === 0 && 'active'}>
             <WavingHandIcon />
           </IconButton>
           </WhiteTooltip></Link>
-          <Link href={'/work'}>
-          <WhiteTooltip title="Work">
-            <IconButton onClick={(e)=> {
+          <Link href={'/work'} onClick={(e)=> {
             onclickHandler(1)
-          }} className={active === 1 && 'active'}>
+          }}>
+          <WhiteTooltip title="Work">
+            <IconButton  className={active === 1 && 'active'}>
             <WorkIcon />
           </IconButton>
           </WhiteTooltip>
           </Link>
-            <Link href={'/about'}>
-            <WhiteTooltip title="About: under construction 🛠️" >
-                <IconButton  className={active === 2 && 'active'} onClick={()=> {
+            <Link href={'/about'} onClick={()=> {
                   onclickHandler(2)
                 }}>
+            <WhiteTooltip title="About: under construction 🛠️" >
+                <IconButton  className={active === 2 && 'active'} >
             <InfoIcon />
           </IconButton>
             </WhiteTooltip>
